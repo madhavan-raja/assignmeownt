@@ -16,7 +16,7 @@
 
 ## Preview
 
-[![Assignment](./examples/assignment.jpg)](./examples/assignment.pdf)
+[![Assignment](./examples/assignment.png)](./examples/assignment.pdf)
 
 ## Quick Start
 
