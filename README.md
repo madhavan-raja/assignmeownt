@@ -62,7 +62,7 @@ In either case, this should result in the creation of ``{your-cv}.pdf``
 
 [**LaTeX**](https://www.latex-project.org) is a fantastic typesetting program that a lot of people use these days, especially the math and computer science people in academia.
 
-[**Awesome-CV**]([https://www.latex-project.org](https://github.com/posquit0/Awesome-CV)) has a cool README template that I shamelessly copied.
+[**Awesome-CV**](https://github.com/posquit0/Awesome-CV) has a cool README template that I shamelessly copied.
 
 
 ## Contact
