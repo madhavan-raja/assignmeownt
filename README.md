@@ -38,7 +38,7 @@ If you don't want to install the dependencies on your system, this can also be o
 At a command prompt, run
 
 ```bash
-xelatex {main}.tex
+xelatex {your-assignment}.tex
 ```
 
 Or using docker:
@@ -47,7 +47,7 @@ Or using docker:
 docker run --rm --user $(id -u):$(id -g) -i -w "/doc" -v "$PWD":/doc thomasweise/texlive make
 ```
 
-In either case, this should result in the creation of `{your-cv}.pdf`
+In either case, this should result in the creation of `{your-assignment}.pdf`
 
 ## Credits
 
