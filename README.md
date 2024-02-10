@@ -7,7 +7,7 @@
 </p>
 
 <div align="center">
-  <a href="./examples/assignment.pdf">
+  <a href="./examples/assignment/assignment.pdf">
     <img alt="Example Assignment" src="https://img.shields.io/badge/assignment-pdf-yellow.svg" />
   </a>
 </div>
@@ -16,7 +16,7 @@
 
 ## Preview
 
-[![Assignment](./examples/assignment.png)](./examples/assignment.pdf)
+[![Assignment](./examples/assignment/assignment.png)](./examples/assignment/assignment.pdf)
 
 ## Quick Start
 
