@@ -8,7 +8,11 @@
 
 <div align="center">
   <a href="./examples/assignment/assignment.pdf">
-    <img alt="Example Assignment" src="https://img.shields.io/badge/assignment-pdf-yellow.svg" />
+    <img alt="Example Assignment" src="https://img.shields.io/badge/Assignment-pdf-yellow.svg" />
+  </a>
+  
+  <a href="#">
+    <img alt="Edit on Overleaf" src="https://img.shields.io/badge/Edit%20Assignment-overleaf-green.svg" />
   </a>
 </div>
 
