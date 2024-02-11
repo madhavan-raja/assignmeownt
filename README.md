@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  A pretty LaTeX template for homework assignments.
+  A cute LaTeX template for homework assignments.
 </p>
 
 <div align="center">
