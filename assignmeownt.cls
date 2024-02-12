@@ -60,17 +60,17 @@
 
 \fancypagestyle{firststyle}
 {
-  \fancyhf{}
-  \cfoot{Page \thepage\ of \pageref{LastPage}}
-  \renewcommand{\headrulewidth}{0pt}
+   \fancyhf{}
+   \cfoot{Page \thepage\ of \pageref{LastPage}}
+   \renewcommand{\headrulewidth}{0pt}
 }
 
 \fancypagestyle{nonfirststyle}
 {
-  \fancyhf{}
-  \lhead{\textbf{\thecoursenumber: \thedoctitle{}}}
-  \rhead{\thedocauthor{}}
-  \cfoot{Page \thepage\ of \pageref{LastPage}}
+   \fancyhf{}
+   \lhead{\textbf{\thecoursenumber: \thedoctitle{}}}
+   \rhead{\thedocauthor{}}
+   \cfoot{Page \thepage\ of \pageref{LastPage}}
 }
 \pagestyle{nonfirststyle}
 
@@ -101,9 +101,10 @@
 
 \newcommand{\bigo}[1]{\ensuremath{\mathcal{O}(#1)}}
 \newcommand{\softo}[1]{\widetilde{\bigO{#1}}}
-
 \newcommand{\bigtheta}[1]{\ensuremath{\Theta(#1)}}
 \newcommand{\bigomega}[1]{\ensuremath{\Omega(#1)}}
+\newcommand{\littleo}[1]{\ensuremath{o}(#1)}
+\newcommand{\littleomega}[1]{\ensuremath{\omega}(#1)}
 
 
 %------------------------------
@@ -113,8 +114,8 @@
 \newcommand{\highlightedtext}[3]{\colorbox{#1}{\texttt{\color{#2} #3}}}
 
 \newcommand{\taggedcomment}[3]{
-  \highlightedtext{#1}{white}{#2}
-  \highlightedtext{white}{#1}{#3}
+    \highlightedtext{#1}{white}{#2}
+    \highlightedtext{white}{#1}{#3}
 }
 
 \newcommand{\todo}[1]{\taggedcomment{red}{TODO}{#1}}
