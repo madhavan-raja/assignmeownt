@@ -22,13 +22,13 @@
 
 [![Assignment](./examples/assignment/assignment.png)](./examples/assignment/assignment.pdf)
 
-## Quick Start
+## Overleaf
 
-- [**Edit Assignment on Overleaf**](https://www.overleaf.com/latex/templates/assignmeownt/rvkskjjkzfxc)
+You can use this template on [Overleaf](https://www.overleaf.com/latex/templates/assignmeownt/rvkskjjkzfxc)!
 
-**_Note:_ Above services do not guarantee up-to-date source code of Assignmeownt**
+**Note**: The Overleaf link does not guarantee up-to-date source code of Assignmeownt.
 
-## How to Use
+## How To Use
 
 ### Requirements
 
