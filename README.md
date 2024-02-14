@@ -11,7 +11,7 @@
     <img alt="Example Assignment" src="https://img.shields.io/badge/Assignment-pdf-yellow.svg" />
   </a>
   
-  <a href="#">
+  <a href="https://www.overleaf.com/latex/templates/assignmeownt/rvkskjjkzfxc">
     <img alt="Edit on Overleaf" src="https://img.shields.io/badge/Edit%20Assignment-overleaf-green.svg" />
   </a>
 </div>
@@ -24,7 +24,7 @@
 
 ## Quick Start
 
-- [**[WILL BE ADDED SOON] Edit Assignment on Overleaf**](#)
+- [**Edit Assignment on Overleaf**](https://www.overleaf.com/latex/templates/assignmeownt/rvkskjjkzfxc)
 
 **_Note:_ Above services do not guarantee up-to-date source code of Assignmeownt**
 
