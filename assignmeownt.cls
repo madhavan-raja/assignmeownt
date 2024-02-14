@@ -36,6 +36,7 @@
 \RequirePackage{tikz}
 \RequirePackage{pgfplots}
 \RequirePackage{xcolor}
+\RequirePackage{xparse}
 
 \pgfplotsset{compat=1.18}
 
@@ -60,17 +61,17 @@
 
 \fancypagestyle{firststyle}
 {
-   \fancyhf{}
-   \cfoot{Page \thepage\ of \pageref{LastPage}}
-   \renewcommand{\headrulewidth}{0pt}
+  \fancyhf{}
+  \cfoot{Page \thepage\ of \pageref{LastPage}}
+  \renewcommand{\headrulewidth}{0pt}
 }
 
 \fancypagestyle{nonfirststyle}
 {
-   \fancyhf{}
-   \lhead{\textbf{\thecoursenumber: \thedoctitle{}}}
-   \rhead{\thedocauthor{}}
-   \cfoot{Page \thepage\ of \pageref{LastPage}}
+  \fancyhf{}
+  \lhead{\textbf{\thecoursenumber: \thedoctitle{}}}
+  \rhead{\thedocauthor{}}
+  \cfoot{Page \thepage\ of \pageref{LastPage}}
 }
 \pagestyle{nonfirststyle}
 
@@ -86,9 +87,9 @@
 \titleformat{\section}{\Large\bfseries}{}{0em}{#1}
 \titleformat{\subsection}{\large\bfseries}{}{0em}{#1}
 
-\newcommand{\question}{\section{Question \thesection}}
-\newcommand{\solution}{\section{Solution \thesection}}
-\newcommand{\questionpart}{\subsection{Part \thesubsection}}
+\DeclareDocumentCommand\question{g}{\section{Question \thesection \IfNoValueF {#1} {: #1}}}
+\DeclareDocumentCommand\solution{g}{\section{Solution \thesection \IfNoValueF {#1} {: #1}}}
+\DeclareDocumentCommand\questionpart{g}{\subsection{Part \thesubsection \IfNoValueF {#1} {: #1}}}
 
 
 %------------------------------
@@ -114,8 +115,8 @@
 \newcommand{\highlightedtext}[3]{\colorbox{#1}{\texttt{\color{#2} #3}}}
 
 \newcommand{\taggedcomment}[3]{
-    \highlightedtext{#1}{white}{#2}
-    \highlightedtext{white}{#1}{#3}
+  \highlightedtext{#1}{white}{#2}
+  \highlightedtext{white}{#1}{#3}
 }
 
 \newcommand{\todo}[1]{\taggedcomment{red}{TODO}{#1}}
