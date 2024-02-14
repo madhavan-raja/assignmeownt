@@ -83,12 +83,12 @@
 
 \renewcommand\thesubsection{(\alph{subsection})}
 
-\titleformat{\section}{\Large\bfseries}{}{0em}{#1 \thesection}
-\titleformat{\subsection}{\large\bfseries}{}{0em}{#1 \thesubsection}
+\titleformat{\section}{\Large\bfseries}{}{0em}{#1}
+\titleformat{\subsection}{\large\bfseries}{}{0em}{#1}
 
-\newcommand{\question}{\section{Question}}
-\newcommand{\solution}{\section{Solution}}
-\newcommand{\questionpart}{\subsection{Part}}
+\newcommand{\question}{\section{Question \thesection}}
+\newcommand{\solution}{\section{Solution \thesection}}
+\newcommand{\questionpart}{\subsection{Part \thesubsection}}
 
 
 %------------------------------
@@ -101,9 +101,10 @@
 
 \newcommand{\bigo}[1]{\ensuremath{\mathcal{O}(#1)}}
 \newcommand{\softo}[1]{\widetilde{\bigO{#1}}}
-
 \newcommand{\bigtheta}[1]{\ensuremath{\Theta(#1)}}
 \newcommand{\bigomega}[1]{\ensuremath{\Omega(#1)}}
+\newcommand{\littleo}[1]{\ensuremath{o}(#1)}
+\newcommand{\littleomega}[1]{\ensuremath{\omega}(#1)}
 
 
 %------------------------------
