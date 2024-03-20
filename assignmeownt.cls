@@ -1,6 +1,7 @@
 %% start of file `assignmeownt.cls'.
 
 %% Copyright 2024 Madhavan Raja (github.com/madhavan-raja).
+%% ̶S̶t̶o̶l̶e̶n̶ ̶f̶r̶o̶m̶  Inspired by the template made by Dr. Joshua Daymude (jdaymude.github.io).
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
@@ -37,22 +38,31 @@
 \RequirePackage{pgfplots}
 \RequirePackage{xcolor}
 \RequirePackage{xparse}
+\RequirePackage{environ}
 
 \pgfplotsset{compat=1.18}
+\mathtoolsset{showonlyrefs}
 
 
 %------------------------------
 % Document Information
 %------------------------------
 
-\newcommand*{\coursenumber}[1]{\newcommand{\thecoursenumber}{#1}}
-\newcommand*{\coursetitle}[1]{\newcommand{\thecoursetitle}{#1}}
-\newcommand*{\doctitle}[1]{\newcommand{\thedoctitle}{#1}}
-\newcommand*{\docauthor}[1]{\newcommand{\thedocauthor}{#1}}
+\newcommand*{\coursenumber}[1]{\newcommand{\@coursenumber}{#1}}
+\newcommand*{\coursetitle}[1]{\newcommand{\@coursetitle}{#1}}
 
-\title{\large{\textbf{\thecoursenumber: \thecoursetitle{}\\\thedoctitle{}}}}
-\author{\thedocauthor{}}
-\date{}
+\renewcommand{\maketitle}{
+  \begin{center}
+    \large{\textbf{\@coursenumber: \@coursetitle}} \\
+    \large{\textbf{\@title}} \\
+    \bigskip
+    \large{\@author} \\
+    \IfNoValueF{\@date}{
+      \bigskip
+      \large{\@date}
+    }
+  \end{center}
+}
 
 
 %------------------------------
@@ -69,8 +79,8 @@
 \fancypagestyle{nonfirststyle}
 {
   \fancyhf{}
-  \lhead{\textbf{\thecoursenumber: \thedoctitle{}}}
-  \rhead{\thedocauthor{}}
+  \lhead{\textbf{\@coursenumber: \@title{}}}
+  \rhead{\@author{}}
   \cfoot{Page \thepage\ of \pageref{LastPage}}
 }
 \pagestyle{nonfirststyle}
@@ -87,9 +97,9 @@
 \titleformat{\section}{\Large\bfseries}{}{0em}{#1}
 \titleformat{\subsection}{\large\bfseries}{}{0em}{#1}
 
-\DeclareDocumentCommand\question{g}{\section{Question \thesection \IfNoValueF {#1} {: #1}}}
-\DeclareDocumentCommand\solution{g}{\section{Solution \thesection \IfNoValueF {#1} {: #1}}}
-\DeclareDocumentCommand\questionpart{g}{\subsection{Part \thesubsection \IfNoValueF {#1} {: #1}}}
+\DeclareDocumentCommand\question{g}{\section{Question \thesection \IfNoValueF{#1}{: #1}}}
+\DeclareDocumentCommand\solution{g}{\section{Solution \thesection \IfNoValueF{#1}{: #1}}}
+\DeclareDocumentCommand\questionpart{g}{\subsection{Part \thesubsection \IfNoValueF{#1}{: #1}}}
 
 
 %------------------------------
@@ -106,6 +116,46 @@
 \newcommand{\bigomega}[1]{\ensuremath{\Omega(#1)}}
 \newcommand{\littleo}[1]{\ensuremath{o}(#1)}
 \newcommand{\littleomega}[1]{\ensuremath{\omega}(#1)}
+
+
+%------------------------------
+% Math
+%------------------------------
+
+\NewEnviron{meowquation}{
+  \begingroup
+  \allowdisplaybreaks
+  \begin{flalign}
+    \BODY
+  \end{flalign}
+  \endgroup
+}
+
+\ExplSyntaxOn
+\DeclareExpandableDocumentCommand{\IfNoValueOrEmptyTF}{mmm}{
+  \IfNoValueTF{#1}{#2}{
+    \tl_if_empty:nTF {#1} {#2} {#3}
+  }
+}
+
+\DeclareExpandableDocumentCommand{\IfNoValueOrEmptyT}{mm}{
+  \IfNoValueOrEmptyTF{#1}{#2}{}
+}
+
+\DeclareExpandableDocumentCommand{\IfNoValueOrEmptyF}{mm}{
+  \IfNoValueOrEmptyTF{#1}{}{#2}
+}
+\ExplSyntaxOff
+
+\DeclareDocumentCommand\eqn{omooo}{
+  \ensuremath{
+    \IfNoValueT{#1}{\implies}
+    & #2 &&
+    \IfNoValueOrEmptyF{#3}{\text{(#3)}}
+    \IfNoValueOrEmptyF{#4}{\label{eqn:#4}}
+    \IfNoValueT{#5}{\\}
+  }
+}
 
 
 %------------------------------
